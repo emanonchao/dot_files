@@ -1,0 +1,13 @@
+alias cls='clear'
+alias ll='ls -l'
+alias la='ls -a'
+alias lt='ls -lt'
+alias grep="grep --color=auto"
+alias -s gz='tar -xzvf'
+alias -s tgz='tar -xzvf'
+alias -s zip='unzip'
+alias -s bz2='tar -xjvf'
+alias ip='ip() { cat /Users/emanon/.ssh/config | grep -A 1 $1 | grep HostName | awk '"'"'{print $2}'"'"' };ip'
+alias kpods='kubectl get pods --show-labels | grep'
+alias ksrvs='kubectl get services --show-labels | grep'
+alias enter_pod='enter_pod() { kpods $1 | awk '"'"'{print $1}'"'"' | xargs -I {} echo "kubectl exec -it {} bash"; };enter_pod'
